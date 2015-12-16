@@ -52,14 +52,29 @@ class CompleteMe
   end
 
   def search_trie(part_word, node)
-      if part_word.empty?
-        until node.link[letter] == letter
-        return node.value if node.word == true
-        end
-        letter = part_word.shift
-      elsif node.link[letter] == letter
+    part_word.each do |letter|
+      if node.link == letter
         search_trie(part_word, node.link[letter])
+      else
+        #do something else
       end
+    end
+# iterate through each character of the partial word
+# check to see if a link exists from the root to the first letter
+# if it exists then go to that node,
+# change the node position and send it back to the beginning (recursion)
+# you do this until you find either the end of the branch,
+# or the end of the partial word,
+# then look down the branch for any true flags and return the value(s)
+
+      # if part_word.empty?
+      #   until node.link[letter] == letter
+      #   return node.value if node.word == true
+      #   end
+      #   letter = part_word.shift
+      # elsif node.link[letter] == letter
+      #   search_trie(part_word, node.link[letter])
+      # end
   end
 
   def select
@@ -86,8 +101,9 @@ completer.insert("apple")
 completer.insert("aardvark")
 completer.insert("android")
 completer.insert("picker")
-puts completer.root.link
-puts completer.count
+completer.suggest("piz")
+# puts completer.root.link
+# puts completer.count
 # dictionary = File.read("/usr/share/dict/words")
 # p dictionary
 # p completer.suggest("piz")    # => nil

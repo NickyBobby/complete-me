@@ -49,13 +49,14 @@ class CompleteMeTest < Minitest::Test
     assert_equal CompleteMe, @completion.class
   end
 
-  def test_word_gets_inserted_to_the_trie_correctly_and_adds_to_the_count
+  def test_word_gets_inserted_to_the_trie_correctly
     @completion.insert("apple")
 
-    assert_equal "apple", @completion.root.link("a").link("p").link("p").link("l").link("e").word.value
+    assert_equal 1, @completion.count 
+    assert_equal "apple", @completion.root.link["a"].link["p"].link["p"].link["l"].link["e"].value
   end
 
-  def test_muliple_words_can_be_inserted_into_the_trie
+  def test_muliple_words_can_be_inserted_into_the_trie_and_adds_to_the_count
     @completion.insert("pizza")
     @completion.insert("pizzeria")
 
@@ -66,6 +67,7 @@ class CompleteMeTest < Minitest::Test
     @completion.insert("Pizza")
 
     assert_equal 1, @completion.count
+    assert_equal "pizza", @completion.root.link["p"].link["i"].link["z"].link["z"].link["a"].value
   end
 
   def test_correctly_tells_me_how_many_words_are_in_the_dictionary
