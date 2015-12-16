@@ -26,7 +26,7 @@ class CompleteMe
 
   def insert(word, node=root, value="")
     @count += 1
-    word = word.chars
+    word = word.downcase.chars
     add_word(word, node, value)
   end
 
