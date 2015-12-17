@@ -48,8 +48,8 @@ class CompleteMe
 
   def populate(word_list)
     words = word_list.split("\n")
-    words.each do |w|
-      insert(w)
+    words.each do |word|
+      insert(word)
     end
   end
 
@@ -93,23 +93,10 @@ class CompleteMe
   list
   end
 
-  def sorting_list(partial_word, array_of_nodes)
-    variable = array_of_nodes.sort_by { |n| n.weight[partial_word] * -1 }
-    x = variable.map {|n| n.value }
+  def sorting_list(partial_word, nodes_list)
+    sorted = nodes_list.sort_by { |n| n.weight[partial_word] * -1 }
+    sorted.map {|n| n.value }
   end
-
-  # def sorting_list(node, list)
-  #   sorted_list = list.sort_by! do |key, value|
-  #     (node.weight[value]) * -1
-  #   end
-  #   s_list = []
-  #   sorted_list.each do |n|
-  #   s_list << n.value
-  #   end
-  #   s_list
-  # end
-
-
 
 end
 

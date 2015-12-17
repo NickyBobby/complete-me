@@ -77,8 +77,24 @@ class CompleteMeTest < Minitest::Test
     assert_equal ["pizza", "pizzeria"], @completion.suggest("piz")
   end
 
-  def test_
+  def test_select_method_returns_weighted_word_first
+    @completion.insert("pizza")
+    @completion.insert("pizzeria")
+    @completion.insert("pizzicato")
+    @completion.select("piz", "pizzicato")
 
+    assert_equal ["pizzicato", "pizzeria", "pizza"], @completion.suggest("piz")
+  end
+
+  def test_select_method_returns_weighted_word_first_for_muliple_partial_words
+    @completion.insert("pizza")
+    @completion.insert("pizzeria")
+    @completion.insert("pizzicato")
+    @completion.select("piz", "pizzicato")
+    @completion.select("pi", "pizza")
+
+    assert_equal ["pizzicato", "pizzeria", "pizza"], @completion.suggest("piz")
+    assert_equal ["pizza", "pizzeria","pizzicato"], @completion.suggest("pi")
   end
 
   def test_correctly_tells_me_how_many_words_are_in_the_dictionary
