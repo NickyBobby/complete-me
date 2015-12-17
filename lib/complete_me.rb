@@ -103,14 +103,14 @@ end
 
 
 
-if __FILE__ == $0
-completer = CompleteMe.new
-dictionary = File.read("/usr/share/dict/words")
-completer.populate(dictionary)
-p completer.suggest("piz")
-# p completer.suggest("aa")
-completer.select("piz", "pizzicato" )
-completer.select("pi", "pizza")
-p completer.suggest("piz")
-p completer.suggest("pi")
-end
+# if __FILE__ == $0
+# completer = CompleteMe.new
+# dictionary = File.read("/usr/share/dict/words")
+# completer.populate(dictionary)
+# p completer.suggest("piz")
+# # p completer.suggest("aa")
+# completer.select("piz", "pizzicato" )
+# completer.select("pi", "pizza")
+# p completer.suggest("piz")
+# p completer.suggest("pi")
+# end

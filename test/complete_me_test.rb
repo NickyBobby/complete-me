@@ -97,6 +97,19 @@ class CompleteMeTest < Minitest::Test
     assert_equal ["pizza", "pizzeria","pizzicato"], @completion.suggest("pi")
   end
 
+  def test_select_method_returns_weighted_word_for_a_list_of_very_similar_words
+    @completion.insert("a")
+    @completion.insert("an")
+    @completion.insert("android")
+    @completion.insert("aardvark")
+    @completion.insert("aardwolf")
+    @completion.select("a", "aardwolf")
+    @completion.select("aa", "aardvark")
+
+    assert_equal ["aardwolf", "android", "an", "aardvark", "a"], @completion.suggest("a")
+    assert_equal ["aardvark", "aardwolf"], @completion.suggest("aa")
+  end
+
   def test_correctly_tells_me_how_many_words_are_in_the_dictionary
     dictionary = File.read("/usr/share/dict/words")
     @completion.populate(dictionary)
