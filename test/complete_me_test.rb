@@ -76,7 +76,7 @@ class CompleteMeTest < Minitest::Test
 
     assert_equal ["pizza", "pizzeria"], @completion.suggest("piz")
   end
-  
+
   def test_returns_word_when_it_is_the_suggested_word
     @completion.insert("a")
     @completion.insert("an")
@@ -85,6 +85,16 @@ class CompleteMeTest < Minitest::Test
     @completion.insert("aardwolf")
 
     assert_equal ["android"], @completion.suggest("android")
+  end
+
+  def test_returns_suggested_word_along_with_other_words_down_the_branch
+    @completion.insert("a")
+    @completion.insert("an")
+    @completion.insert("android")
+    @completion.insert("aardvark")
+    @completion.insert("aardwolf")
+
+    assert_equal ["a", "an", "android", "aardvark", "aardwolf"], @completion.suggest("a")
   end
 
   def test_select_method_returns_weighted_word_first
