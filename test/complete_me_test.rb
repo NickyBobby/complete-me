@@ -52,7 +52,7 @@ class CompleteMeTest < Minitest::Test
   def test_word_gets_inserted_to_the_trie_correctly
     @completion.insert("apple")
 
-    assert_equal 1, @completion.count 
+    assert_equal 1, @completion.count
     assert_equal "apple", @completion.root.link["a"].link["p"].link["p"].link["l"].link["e"].value
   end
 
@@ -73,6 +73,13 @@ class CompleteMeTest < Minitest::Test
   def test_correctly_tells_me_how_many_words_are_in_the_dictionary
     skip
     assert_equal 235866, @completion.count
+  end
+
+  def test_suggest_returns_an_array_of_words_down_the_branch_of_the_tree
+    @completion.insert("pizza")
+    @completion.insert("pizzeria")
+
+    assert_equal ["pizza", "pizzeria"], @completion.suggest("piz")
   end
 
 
