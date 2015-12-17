@@ -1,4 +1,3 @@
-require 'pry'
 
 class Node
   attr_accessor :link, :word, :weight, :value
@@ -10,7 +9,6 @@ class Node
     @value = value
 
   end
-
 
 end
 
@@ -99,18 +97,3 @@ class CompleteMe
   end
 
 end
-
-
-
-
-# if __FILE__ == $0
-# completer = CompleteMe.new
-# dictionary = File.read("/usr/share/dict/words")
-# completer.populate(dictionary)
-# p completer.suggest("piz")
-# # p completer.suggest("aa")
-# completer.select("piz", "pizzicato" )
-# completer.select("pi", "pizza")
-# p completer.suggest("piz")
-# p completer.suggest("pi")
-# end
