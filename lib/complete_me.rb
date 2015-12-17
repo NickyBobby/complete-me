@@ -70,6 +70,8 @@ class CompleteMe
     end
     list
   end
+
+  # index_B_arr[0]== index_A_arr[1]
 # iterate through each character of the partial word
 # check to see if a link exists from the root to the first letter
 # if it exists then go to that node,
@@ -105,17 +107,19 @@ end
 
 if __FILE__ == $0
 completer = CompleteMe.new
-completer.insert("pizza")
-completer.insert("pizzeria")
-completer.insert("apple")
-completer.insert("aardvark")
-completer.insert("android")
-completer.insert("picker")
+dictionary = File.read("/usr/share/dict/words")
+completer.populate(dictionary)
 p completer.suggest("piz")
+# completer.insert("pizza")
+# completer.insert("pizzeria")
+# completer.insert("apple")
+# completer.insert("aardvark")
+# completer.insert("android")
+# completer.insert("picker")
+# p completer.suggest("piz")
 # puts completer.root.link
 # puts completer.count
 
-# dictionary = File.read("/usr/share/dict/words")
 # p dictionary
 # p completer.suggest("piz")    # => nil
 end
