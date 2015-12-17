@@ -56,7 +56,10 @@ class CompleteMe
     if node.link.has_key?(letter)
       search_trie(part_word, node.link[letter])
     else
-      list = []
+    list = []
+    if node.word == true
+      list << node.value
+    end
       search_remaining_nodes(node, list)
     end
   end
@@ -71,31 +74,14 @@ class CompleteMe
     list
   end
 
-  # index_B_arr[0]== index_A_arr[1]
-# iterate through each character of the partial word
-# check to see if a link exists from the root to the first letter
-# if it exists then go to that node,
-# change the node position and send it back to the beginning (recursion)
-# you do this until you find either the end of the branch,
-# or the end of the partial word,
-# then look down the branch for any true flags and return the value(s)
-
-      # if part_word.empty?
-      #   until node.link[letter] == letter
-      #   return node.value if node.word == true
-      #   end
-      #   letter = part_word.shift
-      # elsif node.link[letter] == letter
-      #   search_trie(part_word, node.link[letter])
-      # end
-
-  def select
+  def select(partial_word, weighted_word)
 
   end
 
   def populate(word_list)
-    word_list.each do |word|
-      insert(word)
+    words = word_list.split("\n")
+    words.each do |w|
+      insert(w)
     end
 
   end
