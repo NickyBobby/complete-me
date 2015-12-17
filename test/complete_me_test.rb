@@ -76,6 +76,16 @@ class CompleteMeTest < Minitest::Test
 
     assert_equal ["pizza", "pizzeria"], @completion.suggest("piz")
   end
+  
+  def test_returns_word_when_it_is_the_suggested_word
+    @completion.insert("a")
+    @completion.insert("an")
+    @completion.insert("android")
+    @completion.insert("aardvark")
+    @completion.insert("aardwolf")
+
+    assert_equal ["android"], @completion.suggest("android")
+  end
 
   def test_select_method_returns_weighted_word_first
     @completion.insert("pizza")
@@ -109,6 +119,7 @@ class CompleteMeTest < Minitest::Test
     assert_equal ["aardwolf", "android", "an", "aardvark", "a"], @completion.suggest("a")
     assert_equal ["aardvark", "aardwolf"], @completion.suggest("aa")
   end
+
 
   def test_correctly_tells_me_how_many_words_are_in_the_dictionary
     dictionary = File.read("/usr/share/dict/words")
