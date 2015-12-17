@@ -70,19 +70,22 @@ class CompleteMeTest < Minitest::Test
     assert_equal "pizza", @completion.root.link["p"].link["i"].link["z"].link["z"].link["a"].value
   end
 
-  def test_correctly_tells_me_how_many_words_are_in_the_dictionary
-    dictionary = File.read("/usr/share/dict/words")
-    @completion.populate(dictionary)
-
-    assert_equal 235886, @completion.count
-  end
-
-
   def test_suggest_returns_an_array_of_words_when_collection_only_has_two_words
     @completion.insert("pizza")
     @completion.insert("pizzeria")
 
     assert_equal ["pizza", "pizzeria"], @completion.suggest("piz")
+  end
+
+  def test_
+
+  end
+
+  def test_correctly_tells_me_how_many_words_are_in_the_dictionary
+    dictionary = File.read("/usr/share/dict/words")
+    @completion.populate(dictionary)
+
+    assert_equal 235886, @completion.count
   end
 
   def test_suggest_returns_an_array_of_suggested_words_from_the_dictionary

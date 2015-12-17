@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-16T18:02:38-07:00">2015-12-16T18:02:38-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-16T19:02:25-07:00">2015-12-16T19:02:25-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">92.45%</span></span>
+    (<span class="covered_percent"><span class="green">90.91%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         631357.5
+         608399.0
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>1</b> files in total.
-    <b>53</b> relevant lines. 
-    <span class="green"><b>49</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed </span>
+    <b>55</b> relevant lines. 
+    <span class="green"><b>50</b> lines covered</span> and
+    <span class="red"><b>5</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#c4f0e9f24be754fcdf318c077b92c354510f0942" class="src_link" title="lib/complete_me.rb">lib/complete_me.rb</a></td>
-        <td class="green strong">92.45 %</td>
-        <td>109</td>
-        <td>53</td>
-        <td>49</td>
-        <td>4</td>
-        <td>631357.5</td>
+        <td class="green strong">90.91 %</td>
+        <td>112</td>
+        <td>55</td>
+        <td>50</td>
+        <td>5</td>
+        <td>608399.0</td>
       </tr>
       
     </tbody>
@@ -79,11 +79,11 @@
         <div class="source_table" id="c4f0e9f24be754fcdf318c077b92c354510f0942">
   <div class="header">
     <h3>lib/complete_me.rb</h3>
-    <h4><span class="green">92.45 %</span> covered</h4>
+    <h4><span class="green">90.91 %</span> covered</h4>
     <div>
-      <b>53</b> relevant lines. 
-      <span class="green"><b>49</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <b>55</b> relevant lines. 
+      <span class="green"><b>50</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -441,175 +441,175 @@
         <li class="covered" data-hits="2" data-linenumber="59">
           <span class="hits">2</span>
           
-          <code class="ruby">      list = []</code>
+          <code class="ruby">    list = []</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="60">
           <span class="hits">2</span>
           
-          <code class="ruby">      search_remaining_nodes(node, list)</code>
+          <code class="ruby">    if node.word == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      list &lt;&lt; node.value</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="63">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      search_remaining_nodes(node, list)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="64">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
           <code class="ruby">  def search_remaining_nodes(node, list)</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="65">
+        <li class="covered" data-hits="22" data-linenumber="68">
           <span class="hits">22</span>
           
           <code class="ruby">    node.link.each_value do |node|</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="66">
+        <li class="covered" data-hits="20" data-linenumber="69">
           <span class="hits">20</span>
           
           <code class="ruby">      if node.word == true</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="67">
+        <li class="covered" data-hits="7" data-linenumber="70">
           <span class="hits">7</span>
           
           <code class="ruby">        list &lt;&lt; node.value</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="69">
+        <li class="covered" data-hits="20" data-linenumber="72">
           <span class="hits">20</span>
           
           <code class="ruby">        search_remaining_nodes(node, list)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="71">
+        <li class="covered" data-hits="22" data-linenumber="74">
           <span class="hits">22</span>
           
           <code class="ruby">    list</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="74">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def select</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def select(partial_word, weighted_word)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
           <span class="hits">1</span>
           
           <code class="ruby">  def populate(word_list)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="79">
+        <li class="covered" data-hits="2" data-linenumber="82">
           <span class="hits">2</span>
           
           <code class="ruby">    words = word_list.split(&quot;\n&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="80">
+        <li class="covered" data-hits="2" data-linenumber="83">
           <span class="hits">2</span>
           
           <code class="ruby">    words.each do |w|</code>
         </li>
       
-        <li class="covered" data-hits="471772" data-linenumber="81">
+        <li class="covered" data-hits="471772" data-linenumber="84">
           <span class="hits">471772</span>
           
           <code class="ruby">      insert(w)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="84">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="85">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
@@ -621,7 +621,7 @@
         <li class="never" data-hits="" data-linenumber="89">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
@@ -630,115 +630,133 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
-          
-          <code class="ruby">if __FILE__ == $0</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="92">
-          
-          
-          <code class="ruby">completer = CompleteMe.new</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="93">
-          
-          
-          <code class="ruby">dictionary = File.read(&quot;/usr/share/dict/words&quot;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="94">
-          
-          
-          <code class="ruby">completer.populate(dictionary)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="95">
-          
-          
-          <code class="ruby">p completer.suggest(&quot;piz&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="96">
-          
-          
-          <code class="ruby"># completer.insert(&quot;pizza&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="97">
-          
-          
-          <code class="ruby"># completer.insert(&quot;pizzeria&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="98">
-          
-          
-          <code class="ruby"># completer.insert(&quot;apple&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
-          
-          
-          <code class="ruby"># completer.insert(&quot;aardvark&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby"># completer.insert(&quot;android&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
-          
-          
-          <code class="ruby"># completer.insert(&quot;picker&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
-          
-          
-          <code class="ruby"># p completer.suggest(&quot;piz&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="103">
-          
-          
-          <code class="ruby"># puts completer.root.link</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="104">
-          
-          
-          <code class="ruby"># puts completer.count</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="105">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
+          
+          <code class="ruby">if __FILE__ == $0</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="95">
+          
+          
+          <code class="ruby">completer = CompleteMe.new</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="96">
+          
+          
+          <code class="ruby">dictionary = File.read(&quot;/usr/share/dict/words&quot;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="97">
+          
+          
+          <code class="ruby">completer.populate(dictionary)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="98">
+          
+          
+          <code class="ruby">p completer.suggest(&quot;piz&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby"># completer.insert(&quot;pizza&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby"># completer.insert(&quot;pizzeria&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby"># completer.insert(&quot;apple&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby"># completer.insert(&quot;aardvark&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby"># completer.insert(&quot;android&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby"># completer.insert(&quot;picker&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby"># p completer.suggest(&quot;piz&quot;)</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="106">
           
           
-          <code class="ruby"># p dictionary</code>
+          <code class="ruby"># puts completer.root.link</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
           
           
-          <code class="ruby"># p completer.suggest(&quot;piz&quot;)    # =&gt; nil</code>
+          <code class="ruby"># puts completer.count</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="108">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="109">
+          
+          
+          <code class="ruby"># p dictionary</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby"># p completer.suggest(&quot;piz&quot;)    # =&gt; nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="112">
           
           
           <code class="ruby"># completer.insert(&quot;pizzeria&quot;)</code>

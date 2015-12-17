@@ -75,7 +75,15 @@ class CompleteMe
   end
 
   def select(partial_word, weighted_word)
-
+    partial_word = partial_word.chars
+    weighted_list = search_trie(partial_word, node=root)
+    if weighted_list.include?(weighted_word)
+      weighted_list.each do |word|
+        if word == weighted_word
+          word.weight += 1
+        end
+      end
+    end
   end
 
   def populate(word_list)
@@ -83,7 +91,6 @@ class CompleteMe
     words.each do |w|
       insert(w)
     end
-
   end
 
 end
@@ -96,17 +103,5 @@ completer = CompleteMe.new
 dictionary = File.read("/usr/share/dict/words")
 completer.populate(dictionary)
 p completer.suggest("piz")
-# completer.insert("pizza")
-# completer.insert("pizzeria")
-# completer.insert("apple")
-# completer.insert("aardvark")
-# completer.insert("android")
-# completer.insert("picker")
-# p completer.suggest("piz")
-# puts completer.root.link
-# puts completer.count
-
-# p dictionary
-# p completer.suggest("piz")    # => nil
+p completer.suggest("aa")
 end
-# completer.insert("pizzeria")
