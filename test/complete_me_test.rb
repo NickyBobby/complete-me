@@ -17,7 +17,7 @@ class NodeTest < Minitest::Test
 
   def test_new_nodes_get_created_with_an_initial_value_of_zero_for_weight
 
-    assert_equal 0, @node.weight
+    assert_equal Hash.new(0), @node.weight
   end
 
   def test_new_nodes_get_created_with_an_initial_value_of_false_for_word_attribute

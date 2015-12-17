@@ -3,7 +3,7 @@ require 'pry'
 class Node
   attr_accessor :link, :word, :weight, :value
 
-  def initialize( word=false, link={},  weight=0, value="")
+  def initialize( word=false, link={},  weight=Hash.new(0), value="")
     @link = link
     @word = word
     @weight = weight
@@ -46,9 +46,28 @@ class CompleteMe
     end
   end
 
+  def populate(word_list)
+    words = word_list.split("\n")
+    words.each do |w|
+      insert(w)
+    end
+  end
+
   def suggest(part_word, node=root)
-    part_word = part_word.chars
-    search_trie(part_word, node)
+    word_chars = part_word.chars
+    list = search_trie(word_chars, node)
+    sorting_list(part_word, list)
+  end
+
+  def select(partial_word, weighted_word)
+    word_chars = partial_word.chars
+    weighted_list = search_trie(word_chars, node=root)
+      weighted_list.each do |node|
+        if node.value == weighted_word
+          node.weight[partial_word] += 1
+        end
+      end
+      suggest(partial_word, node)
   end
 
   def search_trie(part_word, node)
@@ -58,7 +77,7 @@ class CompleteMe
     else
     list = []
     if node.word == true
-      list << node.value
+      list << node
     end
       search_remaining_nodes(node, list)
     end
@@ -67,31 +86,30 @@ class CompleteMe
   def search_remaining_nodes(node, list)
     node.link.each_value do |node|
       if node.word == true
-        list << node.value
+        list << node
       end
         search_remaining_nodes(node, list)
     end
-    list
+  list
   end
 
-  def select(partial_word, weighted_word)
-    partial_word = partial_word.chars
-    weighted_list = search_trie(partial_word, node=root)
-    if weighted_list.include?(weighted_word)
-      weighted_list.each do |word|
-        if word == weighted_word
-          word.weight += 1
-        end
-      end
-    end
+  def sorting_list(partial_word, array_of_nodes)
+    variable = array_of_nodes.sort_by { |n| n.weight[partial_word] * -1 }
+    x = variable.map {|n| n.value }
   end
 
-  def populate(word_list)
-    words = word_list.split("\n")
-    words.each do |w|
-      insert(w)
-    end
-  end
+  # def sorting_list(node, list)
+  #   sorted_list = list.sort_by! do |key, value|
+  #     (node.weight[value]) * -1
+  #   end
+  #   s_list = []
+  #   sorted_list.each do |n|
+  #   s_list << n.value
+  #   end
+  #   s_list
+  # end
+
+
 
 end
 
@@ -103,5 +121,9 @@ completer = CompleteMe.new
 dictionary = File.read("/usr/share/dict/words")
 completer.populate(dictionary)
 p completer.suggest("piz")
-p completer.suggest("aa")
+# p completer.suggest("aa")
+completer.select("piz", "pizzicato" )
+completer.select("pi", "pizza")
+p completer.suggest("piz")
+p completer.suggest("pi")
 end
